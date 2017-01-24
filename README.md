@@ -1,4 +1,4 @@
-# YTDirector
+# YTDirector :movie_camera:
 
 > YTDirector: Youtube video sequence editor and player.
   Create rules and play/loop/automate Youtube videos.
