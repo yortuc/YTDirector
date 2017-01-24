@@ -1,27 +1,26 @@
 # YTDirector
 
-> YTDirector: The Youtube video sequence editor.
-  Create rules and play/loop Youtube videos.
+> YTDirector: Youtube video sequence editor and player.
+  Create rules and play/loop/automate Youtube videos.
 
-# Applying Rules
+### Applying Rules
 
 data rules -> Rule Classses -> Run
 
-# Web App
+### Web App
 
-## Player
+#### Player
 - Display range title, text content such as lyrics in ranges
-- Default site lands on the player. Discover and play videos in full-screen.
 - Go to edit mode
 
-## Editor
+#### Editor
+- Bookmarklet : edit this youtube video in YTDirector editor
 - Create scenarios with visual interface, no coding.
 - Undo/redo with redux
 - Play preview -> Player
 - Share full-screen -> Player
 
-
-
-- Bookmarklet : edit this youtube video in director editor
-- Host on the github-pages?, yortuc.com/director
-
+#### Operations
+- Repeat range
+- Show text in range
+- Seek to a certain point
