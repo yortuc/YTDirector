@@ -5,7 +5,7 @@
 
 ### Applying Rules
 
-data rules -> Rule Classses -> Run
+- [x] data rules -> Rule Classses -> Run each class with `currentTime` argument
 
 ### Web App
 
