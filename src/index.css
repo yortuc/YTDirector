@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App{
+	width: 900px;
+} 
+
+.dr-timeline{
+	width: 640px;
+	display: block;
+	height: 40px;
+	background-color: orange;
+	position: relative;
+}
+
+	.dr-timeline-point{
+		display: block;
+		position: absolute;
+		width: 4px;
+		height: 40px;
+		background-color: black;
+		top: 0;
+	}
+
+	.dr-timeline-cursor{background-color: red;}
+
+	.dr-timeline-range{
+		display: block;
+		position: absolute;
+		height: 40px;
+		top: 0;
+	}
+
+.dr-box{
+	display: block;
+	border: 1px inset;
+	padding: 10px;
+	border-radius: 3px;
+}
+	
+.dr-toolbox-ranges,
+.dr-toolbox-rules{
+	width: 200px;
+	position: absolute;
+	top: 0;
+	left: 700px;
+}
+.dr-toolbox-rules{top: 120px;}
