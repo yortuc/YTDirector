@@ -17,9 +17,6 @@ class DRRanges extends Component {
 					return (
 						<div key={key} className="dr-toolbox-listitem">
 							<label>{range.title} [{range.start} - {range.end}]</label>
-							<div className="sub-tree">
-								{}
-							</div>
 						</div>
 					)
 				})}
