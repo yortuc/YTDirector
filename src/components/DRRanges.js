@@ -18,7 +18,7 @@ class DRRanges extends Component {
 				<button>Add Range</button>
 			</div>
 		);
-	}
+	} 
 }
 
 export default DRRanges;
