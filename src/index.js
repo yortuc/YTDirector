@@ -6,13 +6,18 @@ import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import App from './containers/App';
-import main from './Reducers';
+import { mainReducer } from './Reducers';
 
+/*
 const rootReducer = combineReducers({
-	main
-});
+	video,
+	data,
+	selectedObject
+});*/
 
-const store = createStore(rootReducer);
+const store = createStore(mainReducer);
+
+store.subscribe(()=> console.log(store.getState()));
 
 ReactDOM.render(
 	<Provider store={store}>

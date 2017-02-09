@@ -3,24 +3,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { playerReady, 
-         playerStateChanged 
+         playerStateChanged,
+         selectedObjectChanged
 } from '../actions/actionCreators';
 
 import YTPlayer from '../components/YTPlayer';
 import DRTimeLine from '../components/DRTimeLine';
 import DRRanges from '../components/DRRanges';
-import DRRules from '../components/DRRules';
-
-
-/*
-  App -> container: mainState
-    RuleEngine component (abstract component)
-
-    (UI)
-      Player
-      TimeLine
-      Rules/Ranges panel
-*/
+import DRSelection from '../components/DRSelection';
 
 class App extends Component {
 
@@ -32,9 +22,14 @@ class App extends Component {
                   onPlayerReady={(event) => this.props.onPlayerReady()}
                   onStateChange={(playerState) => this.props.onStateChange(playerState)} />
 
-        <DRTimeLine ranges={this.props.ranges} />
-        <DRRanges ranges={this.props.ranges} />
-        <DRRules rules={this.props.rules} />
+        <DRTimeLine ranges={this.props.ranges} 
+                    onRangeClick={(range) => this.props.onRangeClick(range)}/>
+
+        <DRRanges selection={this.props.selectedObject}
+                  ranges={this.props.ranges}
+                  onRangeClick={(range) => this.props.onRangeClick(range)} />
+
+        <DRSelection selection={this.props.selectedObject} />
 
       </div>
     );
@@ -43,16 +38,18 @@ class App extends Component {
 
 function mapStateToProps(state){
   return {
-    ranges: state.main.ranges,
-    rules: state.main.rules,
-    videoId: state.main.videoId
+    ranges: state.ranges,
+    rules: state.rules,
+    videoId: state.videoId,
+    selectedObject: state.selectedObject
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
     onPlayerReady: () => dispatch(playerReady()),
-    onStateChange: (playerState) => dispatch(playerStateChanged(playerState))
+    onStateChange: (playerState) => dispatch(playerStateChanged(playerState)),
+    onRangeClick: (object) => dispatch(selectedObjectChanged(object))
   }
 }
 
