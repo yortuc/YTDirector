@@ -20,7 +20,7 @@
 - [ ] Play preview -> Player
 - [ ] Share full-screen -> Player
 
-#### Operations
+#### Rule Engine
 - [x] Repeat range
 - [ ] Show text in range
 - [ ] Seek to a certain point

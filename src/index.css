@@ -32,6 +32,11 @@ body{
 		position: absolute;
 		height: 40px;
 		top: 0;
+		cursor: pointer;
+	}
+	.dr-timeline-range:hover{
+		padding: -1px;
+		border: 1px dotted #fff;
 	}
 
 .dr-box{

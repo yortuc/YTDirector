@@ -2,8 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { playerReady, 
-         playerStateChanged,
+import { playerStateChanged,
          selectedObjectChanged
 } from '../actions/actionCreators';
 
@@ -19,7 +18,7 @@ class App extends Component {
       <div className="App">
         
         <YTPlayer videoId={this.props.videoId} 
-                  onPlayerReady={(event) => this.props.onPlayerReady()}
+                  onPlayerReady={this.props.onPlayerReady}
                   onStateChange={(playerState) => this.props.onStateChange(playerState)} />
 
         <DRTimeLine ranges={this.props.ranges} 
@@ -47,7 +46,6 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    onPlayerReady: () => dispatch(playerReady()),
     onStateChange: (playerState) => dispatch(playerStateChanged(playerState)),
     onRangeClick: (object) => dispatch(selectedObjectChanged(object))
   }

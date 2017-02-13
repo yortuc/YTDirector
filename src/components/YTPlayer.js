@@ -28,7 +28,7 @@ class YTPlayer extends Component {
 				  videoId: this.props.videoId ,//'M7lc1UVf-VE',
 				  playerVars: { 'autoplay': 0, 'controls': 1 },
 				  events: {
-				    onReady: (event) => this.props.onPlayerReady(),
+				    onReady: (event) => this.props.onPlayerReady(this.player),
 				    onStateChange: (event)=> this.props.onStateChange(event.data /* player-state data */)
 				  }
 				});

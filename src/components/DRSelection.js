@@ -24,13 +24,18 @@ class DRSelection extends Component {
 		);
 	}
 
+	renderHeader(object) {
+		const title = object ? "SELECTED RANGE" : "NO SELECTION";
+		return <label>{title}</label>;
+	}
+
 	render(){
 		const object = this.props.selectedObject;
 
 		return (
 			<div className="dr-box dr-toolbox-rules">
-				<label>{ object ? "SELECTED RANGE" : "NO SELECTION"}</label>
-				{[this.renderRangeInfo()]}
+				{object && this.renderHeader()}
+				{this.renderRangeInfo(object)}
 			</div>
 		)
 	}
