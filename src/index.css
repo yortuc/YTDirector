@@ -15,18 +15,6 @@ body{
 	background-color: orange;
 	position: relative;
 }
-
-	.dr-timeline-point{
-		display: block;
-		position: absolute;
-		width: 4px;
-		height: 40px;
-		background-color: black;
-		top: 0;
-	}
-
-	.dr-timeline-cursor{background-color: red;}
-
 	.dr-timeline-range{
 		display: block;
 		position: absolute;
@@ -35,8 +23,13 @@ body{
 		cursor: pointer;
 	}
 	.dr-timeline-range:hover{
-		padding: -1px;
-		border: 1px dotted #fff;
+		margin: -1px;
+		border: 3px dotted #444;
+	}
+	.dr-timeline-cursor {
+		width: 5px;
+	    background: #fff;
+	    z-index: 100;
 	}
 
 .dr-box{

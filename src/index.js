@@ -9,6 +9,8 @@ import RE from './components/DRRuleEngine';
 
 const store = createStore(mainReducer);
 
+//store.subscribe(()=> console.log(store.getState()));
+
 ReactDOM.render(
 	<Provider store={store}>
 		<App onPlayerReady={(player)=> new RE(store, player)} />

@@ -5,7 +5,7 @@ const initialState = {
 	ranges: [
 		{ id: "rn_13_26", title: "Part #1", start: 1, end: 5 },
 		{ id: "rn_14_16", title: "Part #2", start: 6, end: 8 },
-		{ id: "rn_14_16", title: "Part #2", start: 60, end: 95 }
+		{ id: "rn_14_16", title: "Part #3", start: 60, end: 95 }
 	],
 	rules: [
 		{id: "rl_0_rn_13_26", type: 0, repeatCount: 2, rangeId: "rn_13_26"},
@@ -25,6 +25,11 @@ export function mainReducer(state=initialState, action){
 
 		case "ADD_RULE_TO_RANGE":
 			return state;
+
+		case "CURRENT_TIME_CHANGED":
+			const ret = Object.assign({}, state);
+			ret.currentTime = action.payload;
+			return ret;
 
 		default:
 			return state;

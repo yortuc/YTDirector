@@ -1,4 +1,3 @@
-
 class Range {
 	constructor(props) {
 		this.id = props.id;
@@ -43,6 +42,7 @@ class DRRuleEngine {
 	run() {
 		const currentTime = this.player.getCurrentTime();
 		this.rules.map(rule=> rule.run(currentTime));
+		this.store.dispatch({type: "CURRENT_TIME_CHANGED", payload: currentTime});
 		window.requestAnimationFrame(this.run.bind(this));
 	}
 }

@@ -21,7 +21,9 @@ class App extends Component {
                   onPlayerReady={this.props.onPlayerReady}
                   onStateChange={(playerState) => this.props.onStateChange(playerState)} />
 
-        <DRTimeLine ranges={this.props.ranges} 
+        <DRTimeLine currentTime={this.props.currentTime}
+                    selection={this.props.selectedObject}
+                    ranges={this.props.ranges} 
                     onRangeClick={(range) => this.props.onRangeClick(range)}/>
 
         <DRRanges selection={this.props.selectedObject}
@@ -40,7 +42,8 @@ function mapStateToProps(state){
     ranges: state.ranges,
     rules: state.rules,
     videoId: state.videoId,
-    selectedObject: state.selectedObject
+    selectedObject: state.selectedObject,
+    currentTime: state.currentTime
   }
 }
 
